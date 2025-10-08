@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy Artifacts') {
             steps {
                 withMaven(globalMavenSettingsConfig: 'settings.xml', jdk: 'jdk17', maven: 'maven3', mavenSettingsConfig: '', traceability: true) {
-                    sh 'mvn deploy'
+                    sh 'mvn clean deploy -X'
                 }
             }
         }
